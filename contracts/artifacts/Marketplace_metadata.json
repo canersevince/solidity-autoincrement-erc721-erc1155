@@ -1,0 +1,921 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_ownerCutPerMillion",
+						"type": "uint256"
+					}
+				],
+				"name": "setOwnerCutPerMillion",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_legacyNFTAddress",
+						"type": "address"
+					}
+				],
+				"name": "setLegacyNFTAddress",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "ERC721_Interface",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "InterfaceId_ValidateFingerprint",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "acceptedToken",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "assetId",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"name": "assetId",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"name": "priceInWei",
+						"type": "uint256"
+					},
+					{
+						"name": "expiresAt",
+						"type": "uint256"
+					}
+				],
+				"name": "createOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"name": "fingerprint",
+						"type": "bytes"
+					}
+				],
+				"name": "safeExecuteOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "ownerCutPerMillion",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"name": "priceInWei",
+						"type": "uint256"
+					},
+					{
+						"name": "expiresAt",
+						"type": "uint256"
+					}
+				],
+				"name": "createOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "publicationFeeInWei",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "executeOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_publicationFee",
+						"type": "uint256"
+					}
+				],
+				"name": "setPublicationFee",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "contractName",
+						"type": "string"
+					},
+					{
+						"name": "migrationId",
+						"type": "string"
+					}
+				],
+				"name": "isMigrated",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_acceptedToken",
+						"type": "address"
+					},
+					{
+						"name": "_legacyNFTAddress",
+						"type": "address"
+					},
+					{
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_sender",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "legacyNFTAddress",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "assetId",
+						"type": "uint256"
+					}
+				],
+				"name": "auctionByAssetId",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"name": "",
+						"type": "address"
+					},
+					{
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					},
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "orderByAssetId",
+				"outputs": [
+					{
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"name": "expiresAt",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "executeOrder",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "priceInWei",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "expiresAt",
+						"type": "uint256"
+					}
+				],
+				"name": "OrderCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "totalPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "buyer",
+						"type": "address"
+					}
+				],
+				"name": "OrderSuccessful",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "nftAddress",
+						"type": "address"
+					}
+				],
+				"name": "OrderCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "publicationFee",
+						"type": "uint256"
+					}
+				],
+				"name": "ChangedPublicationFee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "ownerCutPerMillion",
+						"type": "uint256"
+					}
+				],
+				"name": "ChangedOwnerCutPerMillion",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "legacyNFTAddress",
+						"type": "address"
+					}
+				],
+				"name": "ChangeLegacyNFTAddress",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "priceInWei",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "expiresAt",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "totalPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"name": "AuctionSuccessful",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"name": "assetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"name": "seller",
+						"type": "address"
+					}
+				],
+				"name": "AuctionCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Pause",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Unpause",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "contractName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "migrationId",
+						"type": "string"
+					}
+				],
+				"name": "Migrated",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"auctionByAssetId(uint256)": {
+					"details": "[LEGACY] Gets an order using the legacy NFT address.\rIt's equivalent to orderByAssetId[legacyNFTAddress][assetId] but returns same structure as the old Auction\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r"
+					}
+				},
+				"cancelOrder(address,uint256)": {
+					"details": "Cancel an already published order\r can only be canceled by seller or the contract owner\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"nftAddress": "- Address of the NFT registry\r"
+					}
+				},
+				"cancelOrder(uint256)": {
+					"details": "[LEGACY] Cancel an already published order\r can only be canceled by seller or the contract owner\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r"
+					}
+				},
+				"createOrder(address,uint256,uint256,uint256)": {
+					"details": "Creates a new order\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"expiresAt": "- Duration of the order (in hours)\r",
+						"nftAddress": "- Non fungible registry address\r",
+						"priceInWei": "- Price in Wei for the supported coin\r"
+					}
+				},
+				"createOrder(uint256,uint256,uint256)": {
+					"details": "[LEGACY] Creates a new order\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"expiresAt": "- Duration of the order (in hours)\r",
+						"priceInWei": "- Price in Wei for the supported coin\r"
+					}
+				},
+				"executeOrder(address,uint256,uint256)": {
+					"details": "Executes the sale for a published NFT\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"nftAddress": "- Address of the NFT registry\r",
+						"price": "- Order price\r"
+					}
+				},
+				"executeOrder(uint256,uint256)": {
+					"details": "[LEGACY] Executes the sale for a published NFT\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"price": "- Order price\r"
+					}
+				},
+				"initialize()": {
+					"details": "Initializer that marks the contract as initialized. It is important to run this if you had deployed a previous version of a Migratable contract. For more information see https://github.com/zeppelinos/zos-lib/issues/158."
+				},
+				"initialize(address,address,address)": {
+					"details": "Initialize this contract. Acts as a constructor\r",
+					"params": {
+						"_acceptedToken": "- Address of the ERC20 accepted for this marketplace\r",
+						"_legacyNFTAddress": "- Address of the NFT address used for legacy methods that don't have nftAddress as parameter\r"
+					}
+				},
+				"isMigrated(string,string)": {
+					"details": "Returns true if the contract migration was applied.",
+					"params": {
+						"contractName": "Name of the contract.",
+						"migrationId": "Identifier of the migration."
+					},
+					"return": "true if the contract migration was applied, false otherwise."
+				},
+				"pause()": {
+					"details": "called by the owner to pause, triggers stopped state"
+				},
+				"safeExecuteOrder(address,uint256,uint256,bytes)": {
+					"details": "Executes the sale for a published NFT and checks for the asset fingerprint\r",
+					"params": {
+						"assetId": "- ID of the published NFT\r",
+						"fingerprint": "- Verification info for the asset\r",
+						"nftAddress": "- Address of the NFT registry\r",
+						"price": "- Order price\r"
+					}
+				},
+				"setLegacyNFTAddress(address)": {
+					"details": "Sets the legacy NFT address to be used\r",
+					"params": {
+						"_legacyNFTAddress": "- Address of the NFT address used for legacy methods that don't have nftAddress as parameter\r"
+					}
+				},
+				"setOwnerCutPerMillion(uint256)": {
+					"details": "Sets the share cut for the owner of the contract that's\r charged to the seller on a successful sale\r",
+					"params": {
+						"_ownerCutPerMillion": "- Share amount, from 0 to 999,999\r"
+					}
+				},
+				"setPublicationFee(uint256)": {
+					"details": "Sets the publication fee that's charged to users to publish items\r",
+					"params": {
+						"_publicationFee": "- Fee amount in wei this contract charges to publish an item\r"
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
+					"params": {
+						"newOwner": "The address to transfer ownership to."
+					}
+				},
+				"unpause()": {
+					"details": "called by the owner to unpause, returns to normal state"
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/contracts/Marketplace.sol": "Marketplace"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/Marketplace.sol": {
+			"keccak256": "0x85aec5b3578ac672ef63ee4266518f1d441694fe5fb634ab5a36d73d74bd8227",
+			"urls": [
+				"bzzr://f6eb7ff14221620f151745bac98f338db8a306aae40b77adfadd07b4c7e9ca76"
+			]
+		},
+		"localhost/contracts/MarketplaceStorage.sol": {
+			"keccak256": "0x7cc958a5ce36f82122f693622dd435e0aca090cfec48dc3055e1c985559c709e",
+			"urls": [
+				"bzzr://5370eeafe87ec42965fb46bac7834cd7b4101fa03a8d0c86df9a590402cbc0a7"
+			]
+		},
+		"localhost/contracts/lib/openzeppelin-zos/contracts/AddressUtils.sol": {
+			"keccak256": "0x2918b79d4b85402ea408546a8283f79cf02217ccead6a695bcdb1c249b3b3d3b",
+			"urls": [
+				"bzzr://548547b1362c54dba042a1f92e8446efe63185f77d046428d60c8456e4f97f6a"
+			]
+		},
+		"localhost/contracts/lib/openzeppelin-zos/contracts/lifecycle/Pausable.sol": {
+			"keccak256": "0x0ed365159399b2d53f7ea269ee04ae7d36a85d38f6a6c4bcce112482b5c8405e",
+			"urls": [
+				"bzzr://3380724b11bce3538d52ecf5c7b475b23143d8fb50d2e2d6518d24a8d910ddd9"
+			]
+		},
+		"localhost/contracts/lib/openzeppelin-zos/contracts/math/SafeMath.sol": {
+			"keccak256": "0xf053bc62384ddd21b4f74a98029ebb70817a64a920052529e8456f75a574acb2",
+			"urls": [
+				"bzzr://e6e26f56d60fd6b011c765d42131cc60d027bc79a753055c232702c78c1746d8"
+			]
+		},
+		"localhost/contracts/lib/openzeppelin-zos/contracts/ownership/Ownable.sol": {
+			"keccak256": "0x7ff10635801e2d6cedfac915169414334e39841d6a4bad85822832a2589cfec4",
+			"urls": [
+				"bzzr://62c3e217f672306b6283512ac0a10de697c6b98d06a711fab45ff6eec8db8e8b"
+			]
+		},
+		"zos-lib/contracts/migrations/Migratable.sol": {
+			"keccak256": "0xfd7a5517c8c0f2c88866a8066c976b1844a1e67ccbd9ab3d2cb52ec8592385eb",
+			"urls": [
+				"bzzr://4aec289d9f8140122c5cf60ac73e902da2847c6ba76a7d6ba80765d8858875c8"
+			]
+		}
+	},
+	"version": 1
+}

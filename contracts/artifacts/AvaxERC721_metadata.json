@@ -21,6 +21,16 @@
 						"internalType": "string",
 						"name": "_prefix",
 						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "fee",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "creator",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -74,6 +84,164 @@
 					}
 				],
 				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					}
+				],
+				"name": "BatchBurned",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					}
+				],
+				"name": "BatchForSale",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					}
+				],
+				"name": "BatchTransfered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Bought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Destroy",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "error",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ErrorOut",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					}
+				],
+				"name": "Minted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "MinterAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "MinterRemoved",
 				"type": "event"
 			},
 			{
@@ -222,6 +390,40 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Bazaar",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "metaId",
+						"type": "string"
+					},
+					{
+						"internalType": "enum AvaxERC721.TokenState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
@@ -258,6 +460,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "addMinter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -321,6 +536,19 @@
 				"name": "burn",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "buy",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -473,6 +701,38 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isMinter",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "maker",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_tokenURI",
 						"type": "string"
@@ -546,6 +806,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceMinter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -669,6 +936,42 @@
 					}
 				],
 				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "setPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "setTokenPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isEnabled",
+						"type": "bool"
+					}
+				],
+				"name": "setTokenState",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -949,10 +1252,10 @@
 	},
 	"sources": {
 		"localhost/contracts/AvaxERC721.sol": {
-			"keccak256": "0x5e783293a1a15e1259098bab47c55ebba7a3a46fd6e26c2a5a75a2c52069ecda",
+			"keccak256": "0xda08dcec817dc6bef393cb255bc3642388c547313be16f078e0bcf12a1981cab",
 			"urls": [
-				"bzz-raw://a12ec1835b71d5f67f67023ec43556f1c15806ed576f0ebde7b149b8b51e9c8f",
-				"dweb:/ipfs/QmQCLhdwnUJe2ihKfEs9XL33TXuQYN3tswANwpFXK46zN4"
+				"bzz-raw://a583a0963863316f1d1fa2087133f6b6b22799644137921837ac37077142bebe",
+				"dweb:/ipfs/QmTCyCZfS9tbo6fB4EM9LBwJ4ysDXshUYcMmurhTWrBQgC"
 			]
 		},
 		"localhost/contracts/lib/GSN/Context.sol": {
@@ -971,12 +1274,26 @@
 				"dweb:/ipfs/QmUyiwkuiP2fYBVaTwwY82sJKxJyPQaBqAtS4uG6iaUSP7"
 			]
 		},
+		"localhost/contracts/lib/access/OnlyMinter.sol": {
+			"keccak256": "0x37dc34aa26082d69c2965a9fddb3f15d43a562c9dfe0edfeb7a3ff5c37cfb869",
+			"urls": [
+				"bzz-raw://532bc716a1a3588c1dd8a8409ea0f6d480a7e5a7432c87436cc846a4f098d6b7",
+				"dweb:/ipfs/QmVbHnK4D1YJiib9nxq7cj8BaPzs25Wvebh3baF5C46nYB"
+			]
+		},
 		"localhost/contracts/lib/access/Ownable.sol": {
 			"keccak256": "0xf7c39c7e6d06ed3bda90cfefbcbf2ddc32c599c3d6721746546ad64946efccaa",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://cb57a28e189cd8b05748db44bdd51d608e6f1364dd1b35ad921e1bc82c10631e",
 				"dweb:/ipfs/QmaWWTBbVu2pRR9XUbE4iC159NoP59cRF9ZJwhf4ghFN9i"
+			]
+		},
+		"localhost/contracts/lib/access/Roles.sol": {
+			"keccak256": "0xb8d9ccfc21337b2cc2593293618266d304acaeafb70b46b88be406d77183e151",
+			"urls": [
+				"bzz-raw://b5581a8f00c24c1212372308447fa29d6b4f207099c92365ced764904b9e55b1",
+				"dweb:/ipfs/QmcMouqACqqxtDGg6acAecePdz14QYhW8uBJx5MKjBg12n"
 			]
 		},
 		"localhost/contracts/lib/introspection/ERC165.sol": {
@@ -1012,11 +1329,11 @@
 			]
 		},
 		"localhost/contracts/lib/token/ERC721/ERC721.sol": {
-			"keccak256": "0x69250d36954bceb9c18ac0c66e56a8c3efb2ea4503f87c4f59ff8216b0e61139",
+			"keccak256": "0x5cd9e9afc6d9d51d4467f1c2fdd93c5111078fb34da42179a7b0b3ef0366fed9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f2ddf55228ec4b52174810f9075dc179fcab78a265cb0f4840502d3e19ede587",
-				"dweb:/ipfs/Qmb8FVCVnuDynW38DAhXZHwAv6XPK4RXGqu6wxAzaYK1zc"
+				"bzz-raw://e794f5caae2d69749d2d31e1cd5056813b8fca65402a517daf7aeb36dee2f7ef",
+				"dweb:/ipfs/QmefZ6e773t2YXqXSow7kAnnVQDrkCYntV8FQ6zWeT898o"
 			]
 		},
 		"localhost/contracts/lib/token/ERC721/ERC721Burnable.sol": {
