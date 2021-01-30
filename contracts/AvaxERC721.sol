@@ -33,7 +33,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     }
 
 
-    enum TokenState { Pending, ForSale, Sold, Transferred }
+    enum TokenState {Pending, ForSale, Sold, Transferred}
 
     struct Price {
         uint256 tokenId;
@@ -44,7 +44,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
 
     function setTokenState(uint256[] memory ids, bool isEnabled) public onlyMinter {
         for (uint256 i = 0; i < ids.length; i++) {
-            if(isEnabled == true){
+            if (isEnabled == true) {
                 Bazaar[ids[i]].state = TokenState.ForSale;
             } else {
                 Bazaar[ids[i]].state = TokenState.Pending;
@@ -64,8 +64,8 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     }
 
     function setTokenPrice(uint256 id, uint256 setPrice) public onlyTokenOwner(id) {
-            Bazaar[id].price = setPrice;
-            Bazaar[id].state = TokenState.ForSale;
+        Bazaar[id].price = setPrice;
+        Bazaar[id].state = TokenState.ForSale;
     }
 
     function serviceFee(uint256 amount) internal pure returns (uint256) {
@@ -73,16 +73,16 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
 
         return SafeMath.div(toOwner, 100);
     }
-    
+
 
     function buy(uint256 _tokenId) public payable {
         address tokenOwner = ownerOf(_tokenId);
         address payable seller = payable(address(tokenOwner));
 
-    require(msg.value >= Bazaar[_tokenId].price, "Price issue");
+        require(msg.value >= Bazaar[_tokenId].price, "Price issue");
         require(TokenState.ForSale == Bazaar[_tokenId].state, "No Sale");
 
-        if(Bazaar[_tokenId].price >= 0) {
+        if (Bazaar[_tokenId].price >= 0) {
             uint256 fee = serviceFee(msg.value);
             uint256 withFee = SafeMath.sub(msg.value, fee);
 

@@ -45,6 +45,25 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": false,
 						"internalType": "address",
 						"name": "account",
@@ -499,14 +518,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_tokenURI",
+						"type": "string"
 					},
 					{
 						"internalType": "bytes",
@@ -537,6 +556,11 @@
 						"type": "uint256[]"
 					},
 					{
+						"internalType": "string[]",
+						"name": "_tokenID",
+						"type": "string[]"
+					},
+					{
 						"internalType": "bytes",
 						"name": "data",
 						"type": "bytes"
@@ -545,6 +569,19 @@
 				"name": "mintBatch",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -565,6 +602,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -690,6 +734,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "newuri",
+						"type": "string"
+					}
+				],
+				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -704,6 +761,38 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -760,17 +849,23 @@
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC1155-isApprovedForAll}."
 				},
-				"mint(address,uint256,bytes)": {
+				"mint(uint256,string,bytes)": {
 					"details": "Creates `amount` new tokens for `to`, of token type `id`. See {ERC1155-_mint}. Requirements: - the caller must have the `MINTER_ROLE`."
 				},
-				"mintBatch(address,uint256[],uint256[],bytes)": {
+				"mintBatch(address,uint256[],uint256[],string[],bytes)": {
 					"details": "xref:ROOT:erc1155.adoc#batch-operations[Batched] variant of {mint}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
 				},
 				"pause()": {
 					"details": "Pauses all token transfers. See {ERC1155Pausable} and {Pausable-_pause}. Requirements: - the caller must have the `PAUSER_ROLE`."
 				},
 				"paused()": {
 					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
 				},
 				"renounceRole(bytes32,address)": {
 					"details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
@@ -789,6 +884,9 @@
 				},
 				"supportsInterface(bytes4)": {
 					"details": "See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				},
 				"unpause()": {
 					"details": "Unpauses all token transfers. See {ERC1155Pausable} and {Pausable-_unpause}. Requirements: - the caller must have the `PAUSER_ROLE`."
@@ -822,10 +920,10 @@
 	},
 	"sources": {
 		"localhost/contracts/AvaxERC1155.sol": {
-			"keccak256": "0xd5358c95d2ffee2442ce7dc5d9355f7248785c2b4cb52a2202e88bf6c8bdd337",
+			"keccak256": "0xbc0980161ebf65379e3c2df5188cf97f4558cf1fd998829565033d910c406b62",
 			"urls": [
-				"bzz-raw://4dc0ee0843f9f70281af0eca222c375e7bf403fc4ab41b928c12b0daedd2b63c",
-				"dweb:/ipfs/QmPvkHxP5yC8D2rYpKJWRazKvS4ZyRsH4rkMuWYEuDtxBR"
+				"bzz-raw://24944310cc26062ac9a28ab46b257cf7f8b00eea1538ecbe5ce7533565cc24c9",
+				"dweb:/ipfs/QmPk2GvkNVHazEvWfSAawTk1fdKg8xiVxHcMcvKKkuY9YZ"
 			]
 		},
 		"localhost/contracts/lib/GSN/Context.sol": {
@@ -877,19 +975,19 @@
 			]
 		},
 		"localhost/contracts/lib/presets/ERC1155PresetMinterPauser.sol": {
-			"keccak256": "0x64e4402695bdde03f4a42ea236d3740855d6a113b975da529c9c11c1341d2102",
+			"keccak256": "0x3a15fb95a29f1a4d3677ea788427e8f539e80095fd864d51358675d96594d425",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://786142ec6d147048ffd98fc0af912b8e3b362757ffda79d2570354080948448e",
-				"dweb:/ipfs/QmXypseYQD5R2LLERFfSyEoqkMs7HDMR1hMxiBK7PoiWAX"
+				"bzz-raw://7bec5fc44f40fac56d36ae9363b61950f817f449b46cde51d6734cdbd0b8bd3c",
+				"dweb:/ipfs/QmYP7UDAb6voYR31vmqgRgBEjxNfZkvZQrYdaTxBQhPbYK"
 			]
 		},
 		"localhost/contracts/lib/token/ERC1155/ERC1155.sol": {
-			"keccak256": "0xe7fff2c63a8ae715484391eb8626588e27194d7b5b1bf4b60e413b7e1f84b3ad",
+			"keccak256": "0xda5f87f048de551dee6c0bb7fb477222c04bc575d9154fce924c521e4f310431",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0712ac4fd76480553208b1a85e88333d909f87f58df9679e0672df2ac1e93450",
-				"dweb:/ipfs/Qmbj7gRTwzkvGvF4dcyFz6zjXEXNZsQCvvEha5RCK2mEtt"
+				"bzz-raw://82da3a0ad8dbfcb47e506dac9b0ed41e64e553b10a6e58c2267839880432ad8a",
+				"dweb:/ipfs/QmQqXy4euSAFqMESXLkxntTseFc7uBzQDcYAf6rgw9LmdJ"
 			]
 		},
 		"localhost/contracts/lib/token/ERC1155/ERC1155Burnable.sol": {
@@ -962,6 +1060,14 @@
 			"urls": [
 				"bzz-raw://946fe57f3b935f0f4a41345b3eedb617c30912ba5e802bd6b430b394114048ab",
 				"dweb:/ipfs/QmRVgUK6yHgqiVWoFn51aUGYejR8romW2ZqwVvSFMnhnJW"
+			]
+		},
+		"localhost/contracts/lib/utils/Strings.sol": {
+			"keccak256": "0x16b5422892fbdd9648f12e59de85b42efd57d76b6d6b2358cb46e0f6d4a71aaf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ef38821a4ee756757dc1ce9074ef6096d1b5c760627e92c0852d788dc636ea7",
+				"dweb:/ipfs/QmdGwP6BtRMcp4VVJUWwTmXEjYmL52A8WZpBdFJYmzc9pJ"
 			]
 		}
 	},

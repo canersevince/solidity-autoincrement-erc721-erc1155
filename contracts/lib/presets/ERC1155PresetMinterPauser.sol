@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.6.0 <0.8.0;
+pragma experimental ABIEncoderV2;
 
 import "../access/AccessControl.sol";
 import "../GSN/Context.sol";
@@ -49,19 +50,19 @@ contract ERC1155PresetMinterPauser is Context, AccessControl, ERC1155Burnable, E
      *
      * - the caller must have the `MINTER_ROLE`.
      */
-    function mint(address to, uint256 amount, bytes memory data) public virtual {
+    function mint(uint256 amount, string memory _tokenURI, bytes memory data) public virtual {
         require(hasRole(MINTER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have minter role to mint");
-        _mint(to, _tokenIdTracker.current(), amount, data);
+        _mint(msg.sender, _tokenIdTracker.current(), amount, _tokenURI, data);
         _tokenIdTracker.increment();
     }
 
     /**
      * @dev xref:ROOT:erc1155.adoc#batch-operations[Batched] variant of {mint}.
      */
-    function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data) public virtual {
+    function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, string[] memory _tokenID, bytes memory data) public virtual {
         require(hasRole(MINTER_ROLE, _msgSender()), "ERC1155PresetMinterPauser: must have minter role to mint");
 
-        _mintBatch(to, ids, amounts, data);
+        _mintBatch(to, ids, amounts,_tokenID, data);
     }
 
     /**

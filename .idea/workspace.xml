@@ -2,120 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="252ecabc-6836-456a-ae42-49876184faeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/contracts/Marketplace.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/MarketplaceStorage.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/TransferProxy.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/access/OnlyMinter.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/access/Roles.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/AddressUtils.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/ECRecovery.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/MerkleProof.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/access/SignatureBouncer.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/introspection/ERC165.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/introspection/ERC165Support.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/lifecycle/Pausable.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/math/Math.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/math/SafeMath.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/ownership/Ownable.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/ownership/rbac/RBAC.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/ownership/rbac/RBACWithAdmin.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/ownership/rbac/Roles.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/payment/PullPayment.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/payment/SplitPayment.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/BasicToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/BurnableToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/DetailedERC20.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/DetailedMintableToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/DetailedPremintedToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/ERC20.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/ERC20Basic.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/MintableToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/PausableToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/SafeERC20.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/StandardBurnableToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/StandardToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/TokenTimelock.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC20/TokenVesting.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721Basic.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721BasicToken.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721Holder.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721Receiver.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/ERC721Token.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/contracts/token/ERC721/MintableERC721Token.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/access/SignatureBouncer.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/EVMRevert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/EVMThrow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/advanceToBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/assertJump.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/assertRevert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/decodeLogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/ether.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/expectEvent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/expectThrow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/increaseTime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/latestTime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/makeInterfaceId.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/merkleTree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/sendTransaction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/sign.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/toPromise.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/helpers/transactionMined.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/introspection/SupportsInterface.behavior.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/library/ECRecovery.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/library/Math.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/library/MerkleProof.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/lifecycle/Pausable.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/math/SafeMath.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/ownership/Ownable.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/ownership/rbac/RBAC.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/payment/PullPayment.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/payment/SplitPayment.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/BasicToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/BurnableToken.behaviour.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/BurnableToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/DetailedERC20.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/MintableToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/PausableToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/SafeERC20.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/StandardBurnableToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/StandardToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/TokenTimelock.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC20/TokenVesting.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC721/ERC721BasicToken.behaviour.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC721/ERC721BasicToken.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC721/ERC721MintBurn.behaviour.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/test/token/ERC721/ERC721Token.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/zos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/zos.mainnet.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/openzeppelin-zos/zos.ropsten.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/AppDirectory.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/BaseApp.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/PackagedApp.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/UnversionedApp.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/versioning/FreezableImplementationDirectory.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/versioning/ImplementationDirectory.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/versioning/ImplementationProvider.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/versioning/Package.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/application/versioning/Release.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/migrations/Initializable.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/migrations/Migratable.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/upgradeability/AdminUpgradeabilityProxy.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/upgradeability/Proxy.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/upgradeability/UpgradeabilityProxy.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/lib/zos-lib/contracts/upgradeability/UpgradeabilityProxyFactory.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/AvaxERC1155.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/AvaxERC1155.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/AvaxERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/AvaxERC721.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/lib/token/ERC721/ERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/token/ERC721/ERC721.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/lib/presets/ERC1155PresetMinterPauser.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/presets/ERC1155PresetMinterPauser.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/lib/token/ERC1155/ERC1155.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/token/ERC1155/ERC1155.sol" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611864690614</updated>
       <workItem from="1611864691710" duration="14576000" />
-      <workItem from="1611931249856" duration="16863000" />
+      <workItem from="1611931249856" duration="23690000" />
     </task>
     <servers />
   </component>
