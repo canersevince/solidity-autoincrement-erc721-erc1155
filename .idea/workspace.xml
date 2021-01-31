@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="252ecabc-6836-456a-ae42-49876184faeb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/AvaxERC1155.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/AvaxERC1155.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/AvaxERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/AvaxERC721.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC1155_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/lib/presets/ERC1155PresetMinterPauser.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/presets/ERC1155PresetMinterPauser.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/lib/token/ERC1155/ERC1155.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/token/ERC1155/ERC1155.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/lib/presets/ERC721PresetMinterPauserAutoId.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/presets/ERC721PresetMinterPauserAutoId.sol" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/contracts/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nearfolio-near-indexer" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -64,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611864690614</updated>
       <workItem from="1611864691710" duration="14576000" />
-      <workItem from="1611931249856" duration="23690000" />
+      <workItem from="1611931249856" duration="24929000" />
+      <workItem from="1612017388768" duration="7099000" />
     </task>
     <servers />
   </component>
@@ -81,5 +80,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

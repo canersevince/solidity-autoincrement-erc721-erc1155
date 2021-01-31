@@ -9,7 +9,8 @@ import "./lib/access/OnlyMinter.sol";
 contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     using SafeMath for uint256;
     using Strings for string;
-
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIdTracker;
 
     mapping(uint256 => Price) public Bazaar;
 
@@ -18,6 +19,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     event Minted(uint256 id, string metaId);
     event BatchBurned(string metaId, uint256[] ids);
     event BatchForSale(uint256[] ids, string metaId);
+    event ForSale(uint256 id, string metaId);
     event Bought(uint256 tokenId, string metaId, uint256 value);
     event Destroy();
 
@@ -33,7 +35,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     }
 
 
-    enum TokenState {Pending, ForSale, Sold, Transferred}
+    enum TokenState {Pending, ForSale, Sold, Transferred, Neutral}
 
     struct Price {
         uint256 tokenId;
@@ -42,8 +44,28 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
         TokenState state;
     }
 
+    function mint(string memory _tokenURI, bool _onSale, uint256 price) public virtual {
+        require(hasRole(MINTER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have minter role to mint");
+
+        // We cannot just use balanceOf to create the new tokenId because tokens
+        // can be burned (destroyed), so we need a separate counter.
+        _internal_mint(_tokenURI, _tokenIdTracker.current());
+        if (_onSale == true) {
+            mintAndSell(_tokenIdTracker.current());
+            Bazaar[_tokenIdTracker.current()].price = price;
+            Bazaar[_tokenIdTracker.current()].state = TokenState.ForSale;
+        }
+        _tokenIdTracker.increment();
+    }
+
+    function mintAndSell(uint256 id) internal onlyMinter {
+        Bazaar[id].state = TokenState.ForSale;
+        emit ForSale(id, Bazaar[id].metaId);
+    }
+
     function setTokenState(uint256[] memory ids, bool isEnabled) public onlyMinter {
         for (uint256 i = 0; i < ids.length; i++) {
+            require(ownerOf(ids[i]) == _msgSender(), "Only token owner can call this.");
             if (isEnabled == true) {
                 Bazaar[ids[i]].state = TokenState.ForSale;
             } else {
@@ -66,6 +88,11 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
     function setTokenPrice(uint256 id, uint256 setPrice) public onlyTokenOwner(id) {
         Bazaar[id].price = setPrice;
         Bazaar[id].state = TokenState.ForSale;
+    }
+
+    function cancelTokenSale(uint256 id) public onlyTokenOwner(id) {
+        delete Bazaar[id].price;
+        Bazaar[id].state = TokenState.Neutral;
     }
 
     function serviceFee(uint256 amount) internal pure returns (uint256) {

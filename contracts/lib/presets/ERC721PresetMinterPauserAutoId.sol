@@ -25,12 +25,12 @@ import "../token/ERC721/ERC721Pausable.sol";
  * and pauser roles to other accounts.
  */
 contract ERC721PresetMinterPauserAutoId is Context, AccessControl, ERC721Burnable, ERC721Pausable {
-    using Counters for Counters.Counter;
+
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
-    Counters.Counter private _tokenIdTracker;
+
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
@@ -59,14 +59,15 @@ contract ERC721PresetMinterPauserAutoId is Context, AccessControl, ERC721Burnabl
      *
      * - the caller must have the `MINTER_ROLE`.
      */
-    function mint(string memory _tokenURI) public virtual {
-        require(hasRole(MINTER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have minter role to mint");
+    function _internal_mint(string memory _tokenURI, uint256 current) internal virtual {
 
         // We cannot just use balanceOf to create the new tokenId because tokens
         // can be burned (destroyed), so we need a separate counter.
-        _mint(tx.origin, _tokenIdTracker.current(), _tokenURI);
-        _tokenIdTracker.increment();
+        _mint(tx.origin, current, _tokenURI);
+
     }
+
+
 
     /**
      * @dev Pauses all token transfers.
