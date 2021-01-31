@@ -222,16 +222,22 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
 					},
 					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "metaId",
-						"type": "string"
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
 					}
 				],
 				"name": "Minted",
@@ -1291,10 +1297,10 @@
 	},
 	"sources": {
 		"localhost/contracts/AvaxERC721.sol": {
-			"keccak256": "0x0e05bbad8bb74a1a72d4dfd80ad31adf96abfb48bfbe71ff9bc1e44f29faea88",
+			"keccak256": "0x06397c580cb71146e40800fad0d5b33acc5fbe0706ef3bcb587702f8527c4044",
 			"urls": [
-				"bzz-raw://1248a009f767e1ca9250775a193320fa2ff4d206b80a16c411585c6d287c4f2e",
-				"dweb:/ipfs/QmUYDHi3MHUiUoD8eHX9YA7T3uVxnQryLsty4ZJuq8Qa8k"
+				"bzz-raw://ecf4043e312a2258468ca62ae0a58736a760a9ebd1acd4a1c1aed3751558b2b2",
+				"dweb:/ipfs/QmQ8FboJDkpiu2WohvN1KEah8JuBHvdTXp4vRbzs8Zty7G"
 			]
 		},
 		"localhost/contracts/lib/GSN/Context.sol": {

@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/contracts/AvaxERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/AvaxERC721.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/artifacts/AvaxERC721_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/lib/presets/ERC721PresetMinterPauserAutoId.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/lib/presets/ERC721PresetMinterPauserAutoId.sol" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,8 @@
       <updated>1611864690614</updated>
       <workItem from="1611864691710" duration="14576000" />
       <workItem from="1611931249856" duration="24929000" />
-      <workItem from="1612017388768" duration="7099000" />
+      <workItem from="1612017388768" duration="8154000" />
+      <workItem from="1612105919754" duration="6619000" />
     </task>
     <servers />
   </component>

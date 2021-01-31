@@ -16,7 +16,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
 
     event ErrorOut(string error, uint256 tokenId);
     event BatchTransfered(string metaId, address[] recipients, uint256[] ids);
-    event Minted(uint256 id, string metaId);
+    event Minted(address indexed from, address indexed to, uint256 indexed tokenId);
     event BatchBurned(string metaId, uint256[] ids);
     event BatchForSale(uint256[] ids, string metaId);
     event ForSale(uint256 id, string metaId);
@@ -49,6 +49,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
 
         // We cannot just use balanceOf to create the new tokenId because tokens
         // can be burned (destroyed), so we need a separate counter.
+        uint256 current = _tokenIdTracker.current();
         _internal_mint(_tokenURI, _tokenIdTracker.current());
         if (_onSale == true) {
             mintAndSell(_tokenIdTracker.current());
@@ -56,6 +57,7 @@ contract AvaxERC721 is ERC721PresetMinterPauserAutoId, Ownable, MinterRole {
             Bazaar[_tokenIdTracker.current()].state = TokenState.ForSale;
         }
         _tokenIdTracker.increment();
+        emit Minted(address(0), tx.origin, current);
     }
 
     function mintAndSell(uint256 id) internal onlyMinter {
